@@ -4,13 +4,12 @@ import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 
 class SettingsHelper {
-  //操作getApplicationSupportDirectory()下settings.json文件
   static initSettings() async {
     Directory directory = await getApplicationSupportDirectory();
     File settingsFile  =File('${directory.path}/settings.json');
 
     Map<String, dynamic> settings = {
-      'translation': 'disabled',
+      'translation': false,
       'secretId': '',
       'secretKey': ''
     };
